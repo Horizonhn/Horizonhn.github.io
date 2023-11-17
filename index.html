@@ -23,7 +23,7 @@
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
           if (httpRequest.status === 200) {
             console.log('İstek başarılı!');
-            // İstek başarılı olduğunda yapılacak işlemler
+            window.location.href = 'test.html'; // Başarılı istek durumunda yönlendir
           } else {
             console.log('İstek başarısız!');
             // İstek başarısız olduğunda yapılacak işlemler
