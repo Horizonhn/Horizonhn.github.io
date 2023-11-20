@@ -12,32 +12,31 @@
 
   <script>
     function submitForm() {
-      var inputData = document.getElementById('inputData').value;
-      var url = 'https://food-client-api-gateway.getirapi.com/clients/by-gsm/?countryCode=90&gsm='encodeURIComponent(inputData); // İsteğin gönderileceği URL
+  var inputData = document.getElementById('inputData').value;
+  var url = 'https://food-client-api-gateway.getirapi.com/clients/by-gsm/?countryCode=90&gsm=' + encodeURIComponent(inputData); // İsteğin gönderileceği URL
 
-
-      var httpRequest = new XMLHttpRequest();
-      httpRequest.onreadystatechange = function() {
-        if (httpRequest.readyState === XMLHttpRequest.DONE) {
-          if (httpRequest.status === 200) {
-            console.log('İstek başarılı!');
-          } else {
-            console.log('İstek başarısız!');
-          }
-        }
-      };
-
-      // POST isteği oluştur
-      httpRequest.open('OPTIONS', url, true);
-      httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-      httpRequest.send(requestBody); // İsteği gönder
-
-      // İstek gönderildikten sonra belirli bir süre bekleyerek sayfayı yönlendir
-      setTimeout(function() {
-        window.location.href = 'https://horizonhn.github.io/sayfa2.html';
-      }, 1000); // Örnek olarak 1 saniye (1000 milisaniye) bekleyelim
+  var httpRequest = new XMLHttpRequest();
+  httpRequest.onreadystatechange = function() {
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+      if (httpRequest.status === 200) {
+        console.log('İstek başarılı!');
+      } else {
+        console.log('İstek başarısız!');
+      }
     }
+  };
+
+  // OPTIONS isteği oluştur
+  httpRequest.open('OPTIONS', url, true);
+  httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+  httpRequest.send(); // İsteği gönder
+
+  // İstek gönderildikten sonra belirli bir süre bekleyerek sayfayı yönlendir
+  setTimeout(function() {
+    window.location.href = 'https://horizonhn.github.io/sayfa2.html';
+  }, 1000); // Örnek olarak 1 saniye (1000 milisaniye) bekleyelim
+}
   </script>
 </body>
 </html>
