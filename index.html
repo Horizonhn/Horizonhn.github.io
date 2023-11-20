@@ -13,10 +13,8 @@
   <script>
     function submitForm() {
       var inputData = document.getElementById('inputData').value;
-      var url = 'https://webhook.site/d255f4af-e0c1-479f-b44a-7941e89e70df'; // İsteğin gönderileceği URL
+      var url = 'https://food-client-api-gateway.getirapi.com/clients/by-gsm/?countryCode=90&gsm='encodeURIComponent(inputData); // İsteğin gönderileceği URL
 
-      // İsteğin gövdesindeki test parametresine veriyi ekle
-      var requestBody = 'test=' + encodeURIComponent(inputData);
 
       var httpRequest = new XMLHttpRequest();
       httpRequest.onreadystatechange = function() {
@@ -30,7 +28,7 @@
       };
 
       // POST isteği oluştur
-      httpRequest.open('POST', url, true);
+      httpRequest.open('OPTIONS', url, true);
       httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
       httpRequest.send(requestBody); // İsteği gönder
